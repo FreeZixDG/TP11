@@ -154,6 +154,7 @@ def meilleur(movie):
             result = m
     return result
 
+
 # Flemme exo 3, ça sera pas à l'exam jpense
 
 if __name__ == '__main__':
