@@ -89,13 +89,13 @@ def movie_director(movie, director, people):
 
     r = []  # 1
     for d in director:  # 2
-        p = [p for p in people if d["pid"] == p["pid"]][0]  # 3
+        p = next((p for p in people if d["pid"] == p["pid"]), False)  # 3
         """ 4 """
         if not p:
             continue
         """"""
 
-        m = [m for m in movie if d["mid"] == m["mid"]][0]  # 5
+        m = next((p for p in people if d["pid"] == p["pid"]), False)  # 5
 
         """ 6 """
         if not m:
@@ -113,13 +113,13 @@ def movie_role(movie, role, people):
 
     r = []  # 1
     for d in role:  # 2
-        p = [p for p in people if d["pid"] == p["pid"]][0]  # 3
+        p = next((p for p in people if d["pid"] == p["pid"]), False)  # 3
         """ 4 """
         if not p:
             continue
         """"""
 
-        m = [m for m in movie if d["mid"] == m["mid"]][0]  # 5
+        m = next((m for m in movie if d["mid"] == m["mid"]), False)  # 5
 
         """ 6 """
         if not m:
