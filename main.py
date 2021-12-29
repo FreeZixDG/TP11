@@ -162,5 +162,5 @@ if __name__ == '__main__':
     # affiche(movie_director(MOVIE, DIRECTOR, PEOPLE))
     # affiche(ROLE)
     # affiche(movie_role(MOVIE, ROLE, PEOPLE))
-    print(meilleur(MOVIE))
+    # print(meilleur(MOVIE))
     pass
