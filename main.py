@@ -111,7 +111,8 @@ def movie_director(movie, director, people):
 # 2.4
 def movie_role(movie, role, people):
     """
-    J'ai fait un copié collé de la fonction d'avant, en remplaçant "director" par "role" à la 2e ligne
+        J'ai fait un copié collé de la fonction d'avant, en remplaçant "director" par "role" à la 2e ligne
+        D'ailleurs c'est con car on pourrait mettre tout ça en une seule fonction du coup vu que c'est là même.
     """
 
     r = []  # 1
@@ -132,6 +133,8 @@ def movie_role(movie, role, people):
         r += [(m, p)]  # 7
 
     return r
+
+#
 
 
 if __name__ == '__main__':
