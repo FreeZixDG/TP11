@@ -8,6 +8,5 @@ def charge_fichier(chemin: str, colonne_num: List[str]) -> None:
         f.read()
 
 
-
 if __name__ == '__main__':
     charge_fichier("movie.csv", ["mid", "runtime", "year", "rank"])
