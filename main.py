@@ -147,11 +147,12 @@ def reponse_question_2_5():
 # 2.6
 def meilleur(movie):
     if not movie: return None
+
     result = movie[0]
     for m in movie:
         if m["rank"] < result["rank"]:
             result = m
-    return
+    return result
 
 
 if __name__ == '__main__':
