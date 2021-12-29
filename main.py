@@ -138,9 +138,21 @@ def movie_role(movie, role, people):
 
 # 2.5
 
-filter_year = anne_entre(MOVIE, 1945, 1990)
-filter_john = [i for i, _ in movie_director(filter_year, DIRECTOR, prenom(PEOPLE, "John"))]
-affiche(movie_role(filter_john, ROLE, PEOPLE))
+def reponse_question_2_5():
+    filter_year = anne_entre(MOVIE, 1945, 1990)
+    filter_john = [i for i, _ in movie_director(filter_year, DIRECTOR, prenom(PEOPLE, "John"))]
+    affiche(movie_role(filter_john, ROLE, PEOPLE))
+
+
+# 2.6
+def meilleur(movie):
+    if not movie: return None
+    result = movie[0]
+    for m in movie:
+        if m["rank"] < result["rank"]:
+            result = m
+    return
+
 
 if __name__ == '__main__':
     # affiche(MOVIE)
@@ -149,4 +161,5 @@ if __name__ == '__main__':
     # affiche(movie_director(MOVIE, DIRECTOR, PEOPLE))
     # affiche(ROLE)
     # affiche(movie_role(MOVIE, ROLE, PEOPLE))
+    print(meilleur(MOVIE))
     pass
