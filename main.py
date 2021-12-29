@@ -119,6 +119,12 @@ def movie_role(movie, role, people):
             continue
         """"""
 
+        """ajout par rapport a l'algo d'avant"""
+        re = next((p for p in role if d["pid"] == p["pid"]), False)
+        if not re:
+            continue
+        """"""
+
         m = next((m for m in movie if d["mid"] == m["mid"]), False)  # 5
 
         """ 6 """
@@ -126,7 +132,7 @@ def movie_role(movie, role, people):
             continue
         """"""
 
-        r.append((m, p))  # 7
+        r.append((m, re, p))  # 7
 
     return r
 
