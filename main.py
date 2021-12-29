@@ -110,7 +110,6 @@ def movie_director(movie, director, people):
 
 # 2.4
 def movie_role(movie, role, people):
-
     r = []  # 1
     for d in role:  # 2
         p = next((p for p in people if d["pid"] == p["pid"]), False)  # 3
@@ -120,7 +119,7 @@ def movie_role(movie, role, people):
         """"""
 
         """ajout par rapport a l'algo d'avant"""
-        re = next((p for p in role if d["pid"] == p["pid"] and p["mid"] == d["mid"]), False)
+        re = next((p for p in role if [d["pid"], d["mid"]] == [p["pid"], p["mid"]]), False)
         if not re:
             continue
         """"""
@@ -137,6 +136,12 @@ def movie_role(movie, role, people):
     return r
 
 
+# 2.5
+
+filter_year = anne_entre(MOVIE, 1945, 1990)
+filter_john = [i for i, _ in movie_director(filter_year, DIRECTOR, prenom(PEOPLE, "John"))]
+affiche(movie_role(filter_john, ROLE, PEOPLE))
+
 if __name__ == '__main__':
     # affiche(MOVIE)
     # affiche(anne_entre(MOVIE, 2000, 2001))
@@ -144,3 +149,4 @@ if __name__ == '__main__':
     # affiche(movie_director(MOVIE, DIRECTOR, PEOPLE))
     # affiche(ROLE)
     # affiche(movie_role(MOVIE, ROLE, PEOPLE))
+    pass
