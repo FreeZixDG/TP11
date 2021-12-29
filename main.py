@@ -89,13 +89,13 @@ def movie_director(movie, director, people):
 
     r = []  # 1
     for d in director:  # 2
-        p = [p for p in people if d["pid"] == p["pid"]]  # 3
+        p = [p for p in people if d["pid"] == p["pid"]][0]  # 3
         """ 4 """
         if not p:
             continue
         """"""
 
-        m = [m for m in movie if d["mid"] == m["mid"]]  # 5
+        m = [m for m in movie if d["mid"] == m["mid"]][0]  # 5
 
         """ 6 """
         if not m:
@@ -110,31 +110,25 @@ def movie_director(movie, director, people):
 
 # 2.4
 def movie_role(movie, role, people):
-    """
-        J'ai fait un copié collé de la fonction d'avant, en remplaçant "director" par "role" à la 2e ligne
-        D'ailleurs c'est con car on pourrait mettre tout ça en une seule fonction du coup vu que c'est là même.
-    """
 
     r = []  # 1
     for d in role:  # 2
-        p = [p for p in people if d["pid"] == p["pid"]]  # 3
+        p = [p for p in people if d["pid"] == p["pid"]][0]  # 3
         """ 4 """
         if not p:
             continue
         """"""
 
-        m = [m for m in movie if d["mid"] == m["mid"]]  # 5
+        m = [m for m in movie if d["mid"] == m["mid"]][0]  # 5
 
         """ 6 """
         if not m:
             continue
         """"""
 
-        r += [(m, p)]  # 7
+        r.append((m, p))  # 7
 
     return r
-
-#
 
 
 if __name__ == '__main__':
@@ -142,4 +136,5 @@ if __name__ == '__main__':
     # affiche(anne_entre(MOVIE, 2000, 2001))
     # affiche(prenom(PEOPLE, "John"))
     # affiche(movie_director(MOVIE, DIRECTOR, PEOPLE))
-    affiche(movie_role(MOVIE, DIRECTOR, PEOPLE))
+    affiche(ROLE)
+    affiche(movie_role(MOVIE, ROLE, PEOPLE))
