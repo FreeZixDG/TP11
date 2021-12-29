@@ -75,7 +75,7 @@ def prenom(p, pr):
 
 # 2.3
 def movie_director(movie, director, people):
-    """En suivant l'algorithme 'naif' de l'énoncé:
+    """En suivant l'algorithme de l'énoncé:
 
     1 - initialiser un tableau vide r
     2 - pour chaque dictionnaire d dans director:
