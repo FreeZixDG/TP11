@@ -81,7 +81,7 @@ def movie_director(movie, director, people):
     2 - pour chaque dictionnaire d dans director:
     3 - soit p le dictionnaire de people tel que d["pid"] == p["pid"]
     4 - s’il n’y a pas de tel p, passer au d suivant
-    5 - soit m le dictionnaire de movie tel que d["movie"] == m["movie"]
+    5 - soit m le dictionnaire de movie tel que d["mid"] == m["mid"]
     6 - s’il n’y a pas de tel m, passer au d suivant
     7 - ajouter (m, p) à la fin de r
 
@@ -95,7 +95,7 @@ def movie_director(movie, director, people):
             continue
         """"""
 
-        m = next((p for p in people if d["pid"] == p["pid"]), False)  # 5
+        m = next((p for p in movie if d["mid"] == p["mid"]), False)  # 5
 
         """ 6 """
         if not m:
@@ -120,7 +120,7 @@ def movie_role(movie, role, people):
         """"""
 
         """ajout par rapport a l'algo d'avant"""
-        re = next((p for p in role if d["pid"] == p["pid"]), False)
+        re = next((p for p in role if d["pid"] == p["pid"] and p["mid"] == d["mid"]), False)
         if not re:
             continue
         """"""
@@ -142,5 +142,5 @@ if __name__ == '__main__':
     # affiche(anne_entre(MOVIE, 2000, 2001))
     # affiche(prenom(PEOPLE, "John"))
     # affiche(movie_director(MOVIE, DIRECTOR, PEOPLE))
-    affiche(ROLE)
-    affiche(movie_role(MOVIE, ROLE, PEOPLE))
+    # affiche(ROLE)
+    # affiche(movie_role(MOVIE, ROLE, PEOPLE))
